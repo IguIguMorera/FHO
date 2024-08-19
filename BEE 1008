@@ -1,0 +1,16 @@
+//bee 1008
+#include <stdio.h>
+
+int main(){
+	int ra, hrs;
+	float valor, final;
+	scanf("%d",&ra);
+	scanf("%d",&hrs);
+	scanf("%f",&valor);
+	
+	final=hrs*valor;
+	
+	printf("NUMBER = %d\n",ra);
+	printf("SALARY = U$ %.2f\n", final);
+	return 0;
+}
