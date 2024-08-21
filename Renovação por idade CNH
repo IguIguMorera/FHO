@@ -1,0 +1,26 @@
+//Renovação por idade CNH
+#include <stdio.h>
+
+int main (){
+
+int idade;
+
+printf("Informe sua idade:\n");
+scanf("%d", &idade);
+
+//se (idade < 50) entao
+
+if(idade < 50){
+	printf("Renovação da CNH a cada 10 anos.\n");	
+}else{
+	if(idade < 70){
+		printf("Renovação da CNH a cada 5 anos.\n");
+	}else{
+		printf("Renovação da CNH a cada 3 anos.\n");
+	}
+}
+
+
+
+return 0;
+}
