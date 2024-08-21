@@ -1,0 +1,29 @@
+//utilizando o if
+#include <stdio.h>
+
+int main() {
+    int valor;
+
+    printf("Digite um valor de 1 a 7:\n");
+    scanf("%d", &valor);
+
+    if (valor == 1) {
+        printf("DOMINGO\n");
+    } else if (valor == 2) {
+        printf("SEGUNDA\n");
+    } else if (valor == 3) {
+        printf("TERÇA\n");
+    } else if (valor == 4) {
+        printf("QUARTA\n");
+    } else if (valor == 5) {
+        printf("QUINTA\n");
+    } else if (valor == 6) {
+        printf("SEXTA\n");
+    } else if (valor == 7) {
+        printf("SÁBADO\n");
+    } else {
+        printf("Valor inválido. Digite um valor de 1 a 7.\n");
+    }
+
+    return 0;
+}
