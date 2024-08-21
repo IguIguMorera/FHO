@@ -1,0 +1,19 @@
+//bee 1014
+#include <stdio.h>
+
+int main (){
+	
+	int dist;
+	float combgasto, consmedio;
+	
+	scanf("%d", &dist);
+	scanf("%f", &combgasto);
+	
+	consmedio = dist / combgasto;
+	
+	printf("%.3f km/l\n", consmedio);
+	
+	
+	
+	return 0;
+}
