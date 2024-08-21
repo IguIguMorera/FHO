@@ -1,0 +1,40 @@
+//O objetivo 2 dos ODS - Fome zero e agricultura sustentável, apresenta o indicador
+//2.a.2 - Total de fluxos oficiais (ajuda pública ao desenvolvimento e outros fluxos
+//oficiais) para o setor agrícola. Fonte: https://odsbrasil.gov.br/objetivo2/indicador2a2.
+//15. Exercícios
+//
+//A tabela ao lado apresenta dados de
+//recursos oficiais para o setor agrícola.
+//
+//Elabore um programa que permita entrar
+//com dados de dois anos quaisquer e mostre
+//a diferença de recursos aplicados no ano
+//mais recente em relação ao ano mais
+//antigo.
+#include <stdio.h>
+
+int main (){
+	
+	int ano1, ano2;
+	float fluxo1, fluxo2, dif;
+	
+	printf("informe o primeiro ano: ");
+	scanf("%d", &ano1);
+	
+	printf("Entre com o valor do fluxo: ");
+	scanf("%f", &fluxo1);
+	
+	printf("informe o segundo ano: ");
+	scanf("%d", &ano2);
+	
+	printf("Entre com o valor do fluxo: ");
+	scanf("%f", &fluxo2);
+	
+	dif = fluxo2 - fluxo1;
+	
+	
+	printf("A diferença de fluxo do ano %d e %d eh %.1f", ano1, ano2, dif);
+	
+	
+	return 0;
+}
