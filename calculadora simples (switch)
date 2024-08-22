@@ -1,0 +1,40 @@
+/* 2) Mais uma calculadora simples
+Faça outro programa, em linguagem C, considerando o enunciado
+do exercício anterior, só que agora, utilize a estrutura switch-case.
+*/
+
+#include <stdio.h>
+
+int main(){
+	
+	float num1, num2, result;
+	int op;
+	
+	printf("Selecione os numeros para a conta:\n");
+	scanf("%f %f", &num1, &num2);
+	printf("Selecione a operacao:\n");
+	scanf("%d", &op);
+	
+	switch(op){
+		case 1:
+			result = num1 + num2;
+			printf("%.0f",result);
+			break;
+		case 2:
+			result = num1 - num2;
+			printf("%.0f",result);
+			break;
+		case 3:
+			result = num1 * num2;
+			printf("%.1f",result);
+			break;
+		case 4:
+			result = num1 / num2;
+			printf("%.1f",result);
+			break;
+		defout :
+			printf("Numero invalido");
+}
+	
+	return 0;
+}
