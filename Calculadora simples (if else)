@@ -1,0 +1,72 @@
+/*1) Calculadora simples
+ Faça um programa, em linguagem C, que leia dois números reais
+num1 e num2, e um número inteiro “op”.
+ O valor da variável “op” determina a operação matemática que
+deve ser feita com os números inteiros (1- soma, 2- subtração, 3-
+multiplicação e 4-divisão).
+ O programa deve exibir a operação realizada e o resultado
+(exemplo: 1 + 1 = 2).
+ Caso seja digitado um valor para “op” diferente (menor que 1 ou
+maior que 4) o programa deve exibir a mensagem “Operação
+inválida”.
+
+OBS: Utilize a estrutura if-else.
+*/
+#include <stdio.h>
+
+
+int main(){
+
+
+int op;
+
+float num1, num2, valor;
+
+
+printf("digite dois numeros:\n");
+
+scanf("%f %f", &num1, &num2);
+
+printf("Digite um numero de 1 a 4:\n");
+
+scanf("%d", &op);
+
+
+if(op == 1){
+
+
+valor = num1 + num2;
+
+printf("%.2f\n", valor);
+
+}else{
+
+if(op == 2){
+
+valor = num1 - num2;
+
+printf("%.2f\n", valor);
+
+}else{
+
+if(op == 3){
+
+valor = num1 * num2;
+
+printf("%.2f\n", valor);
+
+    }else{
+
+if(op == 4){
+
+valor = num1 / num2;
+
+printf("%.2f\n", valor);
+
+}
+
+  }
+
+}
+}
+}
