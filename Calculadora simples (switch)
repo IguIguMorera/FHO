@@ -2,7 +2,7 @@
 Faça outro programa, em linguagem C, considerando o enunciado
 do exercício anterior, só que agora, utilize a estrutura switch-case.
 */
-
+ 
 #include <stdio.h>
 
 int main(){
