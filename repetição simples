@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(){
+	
+/*
+
+
+para i de 1 ate 5 passo 1 faca
+escreval (i)
+fimpara
+
+*/
+
+int i;
+
+for (i = 1; i <= 5; i++){
+	printf("%d\n", i);
+}
+}
