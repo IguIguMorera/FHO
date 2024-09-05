@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    float nota;
+    int contagem = 0;
+    float soma = 0.0;
+
+    while (contagem < 2) {
+        scanf("%f", &nota);
+
+        if (nota < 0 || nota > 10) {
+            printf("nota invalida\n");
+        } else {
+            soma += nota;
+            contagem++;
+        }
+    }
+
+    float media = soma / 2;
+    printf("media = %.2f\n", media);
+
+    return 0;
+}
