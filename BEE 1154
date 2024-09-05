@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int idade;
+    int total_idades = 0;
+    int contador = 0;
+
+    while (1) {
+        scanf("%d", &idade);
+        if (idade < 0) {
+            break;
+        }
+        total_idades += idade;
+        contador++;
+    }
+
+    if (contador > 0) {
+        double media = (double)total_idades / contador;
+        printf("%.2f\n", media);
+    } else {
+        printf("0.00\n");
+    }
+
+    return 0;
+}
