@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	int i, pulo, qtdCanos, altura, alturaAnterior, ganhou = 1, dif;
+	
+	scanf("%d %d", &pulo, &qtdCanos);
+	
+	scanf("%d", &alturaAnterior); 
+	
+	for (i = 1; i <= qtdCanos-1; i++){
+		scanf("%d", &altura);
+		
+		if(abs(altura-alturaAnterior) > pulo){
+		printf("Game Over\n");
+		ganhou = 0;
+		break;
+	}
+	
+	alturaAnterior = altura;
+	
+	}
+	if(ganhou == 1){
+		printf("You Win\n");
+	}
+	
+}
