@@ -1,0 +1,30 @@
+// BEE1036
+// 971967 – 116934 – Igor Moreira
+// 971971 – 116353 – João Hypolito
+// 971966 - 117128 – Caio Grossi
+// 971874 – 116565 – Gustavo Piva
+// 982213 – 117792 – Samuel Rufino
+// 970215 – 117077 – Daniel Pereira de Souza
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float A, B, C, delta, R1, R2;
+
+    scanf("%f %f %f", &A, &B, &C);
+
+    delta = B * B - 4 * A * C;
+
+    if (A == 0 || delta < 0) {
+        printf("Impossivel calcular\n");
+    } else {
+      
+        R1 = (-B + sqrt(delta)) / (2 * A);
+        R2 = (-B - sqrt(delta)) / (2 * A);
+        printf("R1 = %.5f\n", R1);
+        printf("R2 = %.5f\n", R2);
+    }
+
+    return 0;
+}
