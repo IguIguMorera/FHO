@@ -1,0 +1,31 @@
+//BEE2414
+// 971967 – 116934 – Igor Moreira
+// 971971 – 116353 – João Hypolito
+// 971966 - 117128 – Caio Grossi
+// 971874 – 116565 – Gustavo Piva
+// 982213 – 117792 – Samuel Rufino
+// 970215 – 117077 – Daniel Pereira de Souza
+
+#include <stdio.h>
+
+int main (){
+	
+	int numero, maior = 0;
+	
+	while(1){
+ 
+	scanf("%d", &numero);
+	
+	if(numero == 0){
+	  break;
+	} 	
+	
+	if (numero > maior) {
+		maior = numero;
+		
+		} 
+	}	
+	
+	printf("%d\n", maior);
+	return 0;
+}
