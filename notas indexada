@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    float verNotas[5], media = 0;
+    int ind;
+
+    
+    for (ind = 0; ind < 5; ind++) {
+        printf("Digite a nota %d: ", ind + 1);
+        scanf("%f", &verNotas[ind]);
+    }
+    
+    printf(".......................\n");
+
+  
+    for (ind = 0; ind < 5; ind++) {
+        printf("Valor na posição %d = %f\n", ind, verNotas[ind]);
+    }
+
+    return 0; 
+}
