@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    float matriz[5][5];
+    float menor;
+    int colunaMenor, linha, coluna;
+
+    for (linha = 0; linha < 5; linha++) {
+        for (coluna = 0; coluna < 5; coluna++) {
+            printf("Informe o valor da posição da matriz [%d][%d]: \n", linha, coluna);
+            scanf("%f", &matriz[linha][coluna]);
+        }
+    } 
+
+    menor = matriz[0][0];
+    colunaMenor = 0;
+
+    for (linha = 0; linha < 5; linha++) {
+        for (coluna = 0; coluna < 5; coluna++) {
+            if (matriz[linha][coluna] < menor) {
+                menor = matriz[linha][coluna];
+                colunaMenor = coluna;
+            }
+        }
+    } 
+
+    // Impressão da menor coluna encontrada
+    printf("Menor valor na coluna %d:\n", colunaMenor);
+    for (linha = 0; linha < 5; linha++) {
+        printf("%f\n", matriz[linha][colunaMenor]);
+    }
+
+    return 0;
+}
