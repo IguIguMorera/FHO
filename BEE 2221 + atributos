@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+typedef struct {
+    double valorGolpe;
+    unsigned int ataque;
+    unsigned int defesa;
+    unsigned int level;
+} Personagem;
+
+int main() {
+    unsigned int batalhas, bonus;
+    Personagem p1, p2;
+
+    scanf("%d", &batalhas);
+
+    do {
+        scanf("%d", &bonus);
+        scanf("%d %d %d", &p1.ataque, &p1.defesa, &p1.level);
+        scanf("%d %d %d", &p2.ataque, &p2.defesa, &p2.level);
+
+        p1.valorGolpe = (p1.ataque + p1.defesa) / 2.0;
+        p2.valorGolpe = (p2.ataque + p2.defesa) / 2.0;
+
+        if (p1.level % 2 == 0)
+            p1.valorGolpe += bonus;
+
+        if (p2.level % 2 == 0)
+            p2.valorGolpe += bonus;
+
+        if (p1.valorGolpe == p2.valorGolpe) {
+            printf("Empate\n");
+        } else if (p1.valorGolpe > p2.valorGolpe) {
+            printf("Dabriel\n");
+        } else {
+            printf("Guarte\n");
+        }
+
+        batalhas--;
+    } while (batalhas > 0);
+
+    return 0;
+}
