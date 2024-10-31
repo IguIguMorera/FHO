@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct f{
+	
+	int ladoA;
+	int ladoB;
+	int perimetro;
+	int area;
+
+}Figura;
+
+int main(){
+	
+	Figura triangulo;
+	FILE*entrada;
+	
+	entrada = fopen("triang.in","r");
+	
+	if( entrada == NULL){
+		printf("Erro ao abrir o arquivo triang.in\n");
+		exit(1);
+	}
+	
+	while(1){
+		
+		fscanf(entrada, "%d %d", &triangulo.ladoA, &triangulo.ladoB);
+		
+		if(triangulo.ladoA == 0 || triangulo.ladoB == 0){
+			break;
+			
+		}
+			
+		
+        triangulo.area = (triangulo.ladoA * triangulo.ladoB) / 2; 
+		
+		printf("Base = %d - Altura = %d\n", triangulo.ladoA, triangulo.ladoB);
+		
+		printf("Area = %d\n", triangulo.area);
+		
+		printf("......................\n");
+		
+	}
+	
+	
+	
+	
+	return 0;
+}
