@@ -1,0 +1,29 @@
+essa é a primeira aula de Java com o professor Barreto, utilizamos o aplicativo  Apache net beans e colocamos na pasta Java ant, e esse foi o meu codigo:
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package aula11ant;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author ARS_USER_B03L3_44
+ */
+public class Aula11ant {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+         Scanner teclado = new Scanner(System.in);
+        System.out.println("Aula 1 Exemplo 1 - Gustavo Piva");
+        System.out.println("Digite seu nome");
+        String nome;
+        nome = teclado.next();
+        System.out.println("Seu nome ehpi: " + nome);
+    }
+    
+}
