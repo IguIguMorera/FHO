@@ -1,0 +1,44 @@
+aqui calculamos a média, e frequencia e o programa dirá se passou, ficou de recuperação ou de DP
+
+
+
+package aula1ex3;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author ARS_USER_B03L3_50
+ */
+public class Aula1ex3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Scanner teclado = new Scanner(System.in);
+        float nota1, nota2, media, frequencia;
+        
+        System.out.println("Ex1 - prof Barreto");
+        System.out.println("Digite a primeira nota: ");
+        
+        nota1 = teclado.nextFloat();
+        System.out.println("Digite a segunda nota: ");  
+        nota2 = teclado.nextFloat();
+        System.out.println("Digite uma freequencia");
+        frequencia = teclado.nextFloat();
+       
+        media = (nota1 + (nota2 * 2.0f)) / 3.0f;
+        System.out.println("Sua media e: " + media); 
+        
+       
+        if (media >= 5 && frequencia >= 75) {
+            System.out.println("Voce esta aprovado!");
+        } else if (media >= 3 && frequencia >= 75) {
+            System.out.println("Voce esta de recuperacao.");
+        } else {
+            System.out.println("Voce esta de DP!");
+        }
+    }
+}
