@@ -1,0 +1,24 @@
+aula 1 exercicio 2 de java
+
+
+public class Aula1ex2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        System.out.println("Aula 1 exemplo 2 - Igor");
+        Scanner teclado = new Scanner(System.in); 
+        
+        System.out.println("Digite um numero inteiro: "); 
+        int num1 = teclado.nextInt();
+        
+        System.out.println("Digite um numero Float: ");
+        float num2 = teclado.nextFloat();
+        
+        System.out.println("Numeros digitados: " + num1 + " - " + num2);
+        
+        System.out.println(num1 + num2); 
+    }
+    
+}
