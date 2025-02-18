@@ -1,0 +1,34 @@
+aula 1 de java exercicio 3
+
+
+package aula1ex3;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author ARS_USER_B03L3_50
+ */
+public class Aula1ex3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Scanner teclado = new Scanner(System.in);
+        float nota1, nota2, media;
+        
+        
+        System.out.println("Ex1 - prof Barreto");
+        System.out.println("Digite a primeira nota: ");
+        
+        nota1 = teclado.nextFloat();
+        System.out.println("Digite a 2 nota: ");
+        nota2 = teclado.nextFloat();
+        
+        media = (nota1 + (nota2 * 2.0f)) / 3.0f;
+        System.out.println("Sua media e: " + media);        
+    }
+    
+}
