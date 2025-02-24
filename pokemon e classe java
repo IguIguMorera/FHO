@@ -1,0 +1,45 @@
+nessa aula criamos um programa em java;
+nome de pokemon e classe
+
+
+package javaapplication3;
+
+public class JavaApplication3 {
+    
+    private String nome;
+    private String tipo;
+
+   
+    public void setNome(String n) {
+        this.nome = n;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setTipo(String t) {
+        this.tipo = t;
+    }
+
+    public String getTipo() {
+        return this.tipo;
+    }
+
+    
+    public void imprimir() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Tipo: " + this.tipo);
+    }
+
+    
+    public static void main(String[] args) {
+        System.out.println("Programa iniciado corretamente!");
+
+        
+        JavaApplication3 objeto = new JavaApplication3();
+        objeto.setNome("Pokemon Teste");
+        objeto.setTipo("Fogo");
+        objeto.imprimir();
+    }
+}
