@@ -1,0 +1,63 @@
+ League of Legends é um jogo online competitivo que mistura a velocidade e a intensidade
+de um RTS com elementos de RPG. Nesse jogo, é possível escolher um campeão
+(personagem) sendo que todos possuem Nome, Vida, Dano de Ataque, Velocidade de
+Ataque, Velocidade de Movimento, Regeneração de Vida, Armadura e Resistência
+Mágica. Além disso, um campeão também possui uma habilidade Ultimate que é
+única, por exemplo: a Campeã Ashe possui a habilidade Ultimate “Flecha de
+Cristal Encantada”, na qual a personagem dispara um projeto de gelo em linha
+reta causando dano e atordoando o alvo se a flecha colidir com um campeão
+inimigo, enquanto o Campeão Draven tem como habilidade Ultimate a “Reta da
+Morte”, com a qual arremessa dois machados gigantes para causar dano.
+
+
+De acordo com o cenário proposto,
+explique o que deve ser Classe, Atributos e Métodos. Cite exemplos.
+
+
+package javaapplication4;
+
+public class JavaApplication4 {
+    String nome;
+    double vida;
+    double danoAtaque;
+    double velocidadeAtaque;
+    double velocidadeMovimento;
+    double regeneracao;
+    double armadura;
+    double resistenciaMagica;
+    String habilidade;
+
+    
+    public JavaApplication4(String nome, double vida, double danoAtaque, double velocidadeAtaque, 
+                             double velocidadeMovimento, double regeneracao, double armadura, 
+                             double resistenciaMagica, String habilidade) {
+        this.nome = nome;
+        this.vida = vida;
+        this.danoAtaque = danoAtaque;
+        this.velocidadeAtaque = velocidadeAtaque;
+        this.velocidadeMovimento = velocidadeMovimento;
+        this.regeneracao = regeneracao;
+        this.armadura = armadura;
+        this.resistenciaMagica = resistenciaMagica;
+        this.habilidade = habilidade;
+    }
+
+   
+    public void exibirInfo() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Vida: " + vida);
+        System.out.println("Dano de Ataque: " + danoAtaque);
+        System.out.println("Velocidade de Ataque: " + velocidadeAtaque);
+        System.out.println("Velocidade de Movimento: " + velocidadeMovimento);
+        System.out.println("Regeneração: " + regeneracao);
+        System.out.println("Armadura: " + armadura);
+        System.out.println("Resistência Mágica: " + resistenciaMagica);
+        System.out.println("Habilidade: " + habilidade);
+    }
+
+  
+    public static void main(String[] args) {
+        JavaApplication4 lol = new JavaApplication4("Miata", 100, 15, 1.2, 3.0, 5, 10, 8, "Velocidade extrema");
+        lol.exibirInfo(); 
+    }
+}
