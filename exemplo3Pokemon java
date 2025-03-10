@@ -1,0 +1,80 @@
+na aula de hoje do professor Barreto criamos um programa no apache netbeans ide 16 criamos um programa para imprimir o nome, tipo e nivel do pokemom, criamos duas clases (projects > botao direito > new > java class)
+e ficou assim:
+
+package aula3_exemp1;
+
+public class Aula3_exemp1 { //classe principal do programa
+
+   
+    public static void main(String[] args) {
+       Pokemon pikachu = new Pokemon ();
+       pikachu.setNome("Pikachu do Thomaz");
+       pikachu.setTipo("Choquinho");
+       pikachu.setNivel(5);
+       Pokemon charmander = new Pokemon();
+       charmander.setNome("Charmander do Claudinei");
+       charmander.setTipo("Gordao");
+       charmander.setNivel(45);
+       
+       pikachu.imprimir();
+      pikachu.subirNivel();
+      pikachu.subirNivel();
+      pikachu.subirNivel();
+               pikachu.imprimir();
+    }
+    
+}
+
+
+//outra classe:
+
+
+package aula3_exemp1;
+
+
+public class Pokemon {
+    
+    private String nome;
+    private String tipo;
+    private int nivel;
+    
+    public void setNome(String n){
+        this.nome = n;
+    }
+    
+    public void setTipo(String t){
+        this.tipo = t;
+        
+    }
+    
+    public void setNivel(int n){
+        this.nivel = n;
+        
+    }
+    
+    public String getNome(){
+       return this.nome;
+    }
+    public String getTipo(){
+        return this.tipo;
+        
+    }
+    public int getNivel(){
+        return this.nivel;
+    }
+    
+    public void imprimir(){
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Tipo: " + this.tipo);
+        System.out.println("Nivel: " + this. nivel);
+        
+    }
+        public void subirNivel (){
+            nivel++;    
+        }   
+    {
+        
+        
+    }}
+
+
