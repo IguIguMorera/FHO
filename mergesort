@@ -1,0 +1,86 @@
+//hoje fizemos um codigo para testar o mergesort e esse foi o resultado:
+#include <stdio.h>
+#include <stdlib.h>             /* malloc e rand */
+
+/* ************************************************ */
+/* ************ FUNÇÕES PARA MERGESORT ************ */
+/* ************************************************ */
+
+/* Função para mesclar dois subvetores */
+void merge(int *v, int meio, int n) {
+    int i = 0, j = meio, k = 0;
+    int *aux = (int *) malloc(n * sizeof(int));
+
+    while (i < meio && j < n) {
+        if (v[i] <= v[j]) {
+            aux[k++] = v[i++];
+        } else {
+            aux[k++] = v[j++];
+        }
+    }
+
+    // Se restaram elementos no primeiro subvetor
+    while (i < meio) {
+        aux[k++] = v[i++];
+    }
+
+    // Se restaram elementos no segundo subvetor
+    while (j < n) {
+        aux[k++] = v[j++];
+    }
+
+    // Copia os elementos do vetor auxiliar para o vetor original
+    for (i = 0; i < n; i++) {
+        v[i] = aux[i];
+    }
+
+    free(aux);  // Libera o vetor auxiliar
+}
+
+/* Função recursiva para dividir o vetor */
+void mergeSort(int *v, int n) {
+    if (n > 1) {
+        int meio = n / 2;
+
+        // Chama o procedimento recursivo para as duas metades
+        mergeSort(v, meio);
+        mergeSort(v + meio, n - meio);
+
+        // Combina as duas metades ordenadas
+        merge(v, meio, n);
+    }
+}
+
+/* ************************************************ */
+/* ***********           MAIN           *********** */
+/* ************************************************ */
+int main(void) {
+    int *baseDados;
+    int n, i;
+
+    /* Gerando dados para teste */
+    n = 10;
+    baseDados = (int*) malloc(n * sizeof(int));
+
+    for (i = 0; i < n; i++) 
+        baseDados[i] = rand() % 80;
+
+    /* Testando Merge Sort */
+    printf("\nMerge Sort\n\n");
+
+    printf("\nEstrutura não ordenada\n");
+    for (i = 0; i < n; i++)
+        printf("%d ", baseDados[i]);
+
+    mergeSort(baseDados, n);
+
+    printf("\nEstrutura ordenada\n");
+    for (i = 0; i < n; i++)
+        printf("%d ", baseDados[i]);
+
+    printf("\n");
+
+    free(baseDados);
+
+    return 0;
+}
