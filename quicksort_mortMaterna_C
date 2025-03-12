@@ -1,0 +1,180 @@
+/*hoje utilizamos essa função:
+função quickSort (vetor, esquerda, direita):
+escolha um elemento para ser o pivô
+distribua os elementos ao redor do pivô:
+(elementos menores que o pivô ficam à esquerda; maiores à direita)
+faça i = esquerda E j = direita
+enquanto i <= j:
+enquanto vetor[i] < pivô E i < direita: incremente i
+enquanto vetor[j] > pivô E j > esquerda: decremente j
+se i <= j:
+troque vetor[i] com vetor[j]
+incremente i E decremente j
+chame o procedimento recursivo:
+se (j > esquerda): quickSort(vetor, esquerda, j)
+se (i < direita): quickSort(vetor, i, direita)
+*/
+//ex:
+/*#include <stdio.h>
+#include <stdlib.h>
+
+#define QDEESTADOS 27
+
+typedef struct _mort{
+	char  estado[3];
+	float mortes09;
+	float mortes15;
+	float indice;
+} mortMaterna;
+	
+
+/* Inserir aqui a rotina quicksort */
+void quicksort(mortMaterna *dados, int esq, int dir){
+	int i, j, pivo;
+	
+	mortMaterna temp;
+	
+	pivo = esq;
+	i = esq;
+	j = dir;
+	
+	while(i<=j){
+		while(dados[i].mortes15 < dados[pivo].mortes15 && i < dir)
+			i++;
+			
+		
+	...	
+		
+		
+		
+	}
+	...
+	
+}
+
+int main(){
+	
+	mortMaterna estados[QDEESTADOS];
+
+	int i;
+
+	for(i=0; i < QDEESTADOS; i++){
+		scanf("%s %f %f", estados[i].estado, &estados[i].mortes09, &estados[i].mortes15);
+		estados[i].indice = estados[i].mortes15 - estados[i].mortes09;
+	}
+
+	printf("\nDados em ordem de entrada\n");
+	printf("Estado\t2009\t2015\tDiferenca\n");	
+	for(i=0; i<QDEESTADOS; i++)
+		printf("%s\t%.1f\t%.1f\t%.1f\n",estados[i].estado, estados[i].mortes09, estados[i].mortes15, estados[i].indice);
+
+//	quicksort(estados, 0, QDEESTADOS-1);
+
+	printf("\nDados ordenados por mortalidade em 2015\n");
+	printf("Estado\t2009\t2015\tDiferenca\n");	
+	for(i=0; i<QDEESTADOS; i++)
+		printf("%s\t%.1f\t%.1f\t%.1f\n",estados[i].estado, estados[i].mortes09, estados[i].mortes15, estados[i].indice);
+	
+	return 0;
+}
+*/
+/* e  esse foi os dados inseridos:
+AC 41.4 58.9
+AL 34.3 59.1
+AP 37.6 110.8
+AM 109.9 78.8
+BA 101.8 75.4
+CE 66.2 49.1
+DF 67.3 43.7
+ES 91.3 73.1
+GO 50.7 56.6
+MA 109.7 116.5
+MT 85.9 82.9
+MS 126.7 88.2
+MG 52.1 47
+PA 73.2 72.9
+PB 64.9 81.8
+PR 71.7 51.7
+PE 62.1 67.6
+PI 100.1 103.6
+RJ 93.7 67.1
+RN 63.1 68.4
+RS 67.3 43.4
+RO 97.8 57.7
+RA 125 96.4
+SC 32.2 30.9
+SP 56.6 50.8
+SE 118.6 51.6
+TO 97 85.6
+*/
+
+//e esse foi o resultado:
+#include <stdio.h>
+#include <stdlib.h>
+
+#define QDEESTADOS 27
+
+typedef struct _mort {
+    char estado[4]; // Ajustado para armazenar corretamente as siglas
+    float mortes09;
+    float mortes15;
+    float indice;
+} mortMaterna;
+
+/* Função QuickSort */
+void quicksort(mortMaterna *dados, int esq, int dir) {
+    int i = esq, j = dir;
+    float pivo = dados[(esq + dir) / 2].mortes15; // Escolhendo o pivô pelo valor de mortes15
+    mortMaterna temp;
+
+    while (i <= j) {
+        while (dados[i].mortes15 < pivo) // Move para frente enquanto for menor que o pivô
+            i++;
+        while (dados[j].mortes15 > pivo) // Move para trás enquanto for maior que o pivô
+            j--;
+
+        if (i <= j) { // Troca os elementos
+            temp = dados[i];
+            dados[i] = dados[j];
+            dados[j] = temp;
+            i++;
+            j--;
+        }
+    }
+
+    // Chamada recursiva para as duas metades
+    if (esq < j)
+        quicksort(dados, esq, j);
+    if (i < dir)
+        quicksort(dados, i, dir);
+}
+
+int main() {
+    mortMaterna estados[QDEESTADOS];
+    int i;
+
+    // Entrada de dados
+    for (i = 0; i < QDEESTADOS; i++) {
+        scanf("%3s %f %f", estados[i].estado, &estados[i].mortes09, &estados[i].mortes15);
+        estados[i].indice = estados[i].mortes15 - estados[i].mortes09;
+    }
+
+    // Impressão dos dados antes da ordenação
+    printf("\nDados em ordem de entrada\n");
+    printf("Estado\t2009\t2015\tDiferenca\n");
+    for (i = 0; i < QDEESTADOS; i++)
+        printf("%s\t%.1f\t%.1f\t%.1f\n", estados[i].estado, estados[i].mortes09, estados[i].mortes15, estados[i].indice);
+
+    // Ordenação por número de mortes em 2015
+    quicksort(estados, 0, QDEESTADOS - 1);
+
+    // Impressão dos dados ordenados
+    printf("\nDados ordenados por mortalidade em 2015\n");
+    printf("Estado\t2009\t2015\tDiferenca\n");
+    for (i = 0; i < QDEESTADOS; i++)
+        printf("%s\t%.1f\t%.1f\t%.1f\n", estados[i].estado, estados[i].mortes09, estados[i].mortes15, estados[i].indice);
+
+    return 0;
+}
+
+
