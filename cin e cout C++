@@ -1,0 +1,35 @@
+/*neste codigo o programa vai usar o for para repetir 10 vezes 
+o comando "cin" para digitarmos um numero e ele verificar
+se é maior, menor ou igual a zero, para facilitar tudo utilizamos a 
+biblioteca <iostream>
+*/
+
+#include <iostream>
+#include <string>
+
+int main(int argc, char** argv) {
+	
+for (int i = 0; i < 10; i++){
+	int x;
+	
+	std::cout << "Digite um numero: ";
+	std::cin >> x;
+	
+	if(x < 0){
+		std::cout << "numero eh negativo\n";
+	}
+	else if(x > 0){
+		std::cout << "numero eh positivo\n";
+	}
+	else{
+	
+		std::cout << "numero eh zero\n";
+	}
+	
+}
+	
+	
+	
+	system("pause");
+	return 0;
+}
