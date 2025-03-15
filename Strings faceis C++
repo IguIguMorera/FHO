@@ -1,0 +1,21 @@
+//neste codigo estou criando strings e numeros inteiros e imprimindo eles de forma mais facil atravez da biblioteca <iostream> e <string>
+#include <iostream>
+#include <string>
+
+int main(int argc, char** argv) {
+	
+	int Myint = 10; //criando um valor int qualquer
+	
+	Myint = 5; //modificando o valor int
+	
+	std::string Mystring = "Teste"; //criei uma string qualquer
+
+	Mystring = "Ola mundoooo"; //dei outro valor a string
+	
+	
+	std::cout <<  Myint << "\n"; //imprimindo o valor int
+	std::cout <<  Mystring << "\n"; //imprimindo a string
+	
+	system("pause");
+	return 0;
+}
