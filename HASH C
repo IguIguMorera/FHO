@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+#include <string.h>
+#include <stdio.h>
+
+#define TAMHASH 97
+#define QDEALUNOS 75
+
+int hashFunction(int key){
+	int code; 
+	code = key% TAMHASH;
+	
+	return code;
+ 
+	
+}
+
+using namespace std;
+
+int main(){
+   
+   int ra, i, hashCode;
+   
+   int hashTable[TAMHASH];
+   
+   /* iniciar todas as posicoes da tabela espalhamento 
+   com valor zero (nao ocupada)*/
+   
+   for(i=0; i<TAMHASH; i++)
+   hashTable[i] = 0;
+   
+   /* ler todos os RAs, processar e armazenar tabela espalhamento */
+   
+   for(i=0; i<QDEALUNOS; i++){
+   	scanf("%d", &ra);
+   	
+   	hashCode = hashFunction(ra);
+   	
+   	//testar se nao houve colisao
+   	if(hashTable[hashCode] == 0)
+   		hashTable[hashCode] = ra;
+   		
+   }
+   // exibir todos os RAs armazenados na tabela de espalhamento
+   
+   for(i=0; i<TAMHASH; i++){
+   	if(hashTable[i] > 0 )
+   	
+   	cout << "\n RA = " << hashTable[i] << "\n armazenado na posicao = " << i << endl; 
+   }
+   
+	system("pause");
+    return 0;
+}
