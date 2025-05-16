@@ -1,0 +1,2 @@
+CREATE TABLE estudante (id INT PRIMARY KEY, nome VARCHAR(30), curso VARCHAR(80));
+DESCRIBLE estudante;
